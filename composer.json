@@ -1,8 +1,8 @@
 {
-  "name": "trafiklab/php-sdk-base",
+  "name": "trafiklab/php-sdk-commons",
   "description": "This package contains shared code among our APIs",
   "type": "library",
-  "license": "",
+  "license": "MPL-2.0",
   "authors": [
     {
       "name": "Bert Marcelis",
