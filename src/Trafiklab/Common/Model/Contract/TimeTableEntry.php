@@ -4,7 +4,6 @@ namespace Trafiklab\Common\Model\Contract;
 
 
 use DateTime;
-use Trafiklab\Resrobot\Model\SlTimeTableEntryImpl;
 
 /**
  * An entry in a timetable, describing a single departure or arrival of a vehicle at a stoplocation.
