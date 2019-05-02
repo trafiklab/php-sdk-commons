@@ -51,6 +51,22 @@ class WebResponse
     }
 
     /**
+     * Retrieve one of the request parameters which were used to make this request.
+     *
+     * @param string $name The parameter to retrieve.
+     *
+     * @return mixed One of the request parameters which were used to make this request.
+     */
+    public function getRequestParameter(string $name)
+    {
+        if (key_exists($name, $this->getRequestParameters())) {
+            return $this->_parameters[$name];
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * The user agent which was used to make this request.
      * @return string The user agent which was used to make this request.
      */

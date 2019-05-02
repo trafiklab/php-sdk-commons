@@ -23,6 +23,8 @@ class CurlWebClientTest extends PHPUnit_Framework_TestCase
         self::assertEquals("200 OK", $webResponse->getBody());
         self::assertArrayHasKey('sleep', $webResponse->getRequestParameters());
         self::assertEquals(5, $webResponse->getRequestParameters()['sleep']);
+        self::assertEquals(5, $webResponse->getRequestParameter('sleep'));
+        self::assertEquals(null, $webResponse->getRequestParameter('sleeps'));
     }
 
     /**
