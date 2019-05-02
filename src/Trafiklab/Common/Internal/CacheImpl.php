@@ -4,9 +4,7 @@
 namespace Trafiklab\Common\Internal;
 
 
-use Cache\Adapter\Filesystem\FilesystemCachePool;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
+use Cache\Adapter\PHPArray\ArrayCachePool;
 
 /**
  * This caching class provides an abstraction layer on top of the PSR-6 cache implementations loaded via composer.
@@ -21,10 +19,24 @@ class CacheImpl implements Cache
     private const PREFIX = "TL_common_sdk_";
     private const DEFAULT_CACHE_TTL = 15;
 
+    private static $_instance;
     /**
      * @var $cache Cache\Adapter\Common\AbstractCachePool cache pool which will be used.
      */
     private $cache;
+
+    private function __construct()
+    {
+        // Hide constructor
+    }
+
+    public static function getInstance()
+    {
+        if (self::$_instance == null) {
+            self::$_instance = new CacheImpl();
+        }
+        return self::$_instance;
+    }
 
     /**
      * Check if an item is present in the cache.
@@ -88,11 +100,8 @@ class CacheImpl implements Cache
             if (extension_loaded('apc')) {
                 $this->cache = new \Cache\Adapter\Apcu\ApcuCachePool();
             } else {
-                // Fall back to file cache
-                $filesystemAdapter = new Local('./.cache/');
-                $filesystem = new Filesystem($filesystemAdapter);
-
-                $this->cache = new FilesystemCachePool($filesystem);
+                // Fall back to array cache
+                $this->cache = new ArrayCachePool();
             }
         }
         return $this->cache;

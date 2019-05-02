@@ -8,12 +8,20 @@ class WebResponse
 {
     private $_responseCode;
     private $_body;
+    private $_url;
+    private $_userAgent;
+    private $_parameters;
+    private $_isFromCache;
 
-    public function __construct(int $responseCode,  $body)
+    public function __construct(string $url, array $parameters, string $userAgent, int $responseCode, $body)
     {
+        $this->_url = $url;
         $this->_responseCode = $responseCode;
         $this->_body = $body;
+        $this->_parameters = $parameters;
+        $this->_userAgent = $userAgent;
     }
+
 
     /**
      * The HTTP body received from the server.
@@ -33,5 +41,47 @@ class WebResponse
         return $this->_responseCode;
     }
 
+    /**
+     * The request parameters which were used to make this request.
+     * @return array The request parameters which were used to make this request.
+     */
+    public function getRequestParameters(): array
+    {
+        return $this->_parameters;
+    }
+
+    /**
+     * The user agent which was used to make this request.
+     * @return string The user agent which was used to make this request.
+     */
+    public function getRequestUserAgent(): string
+    {
+        return $this->_userAgent;
+    }
+
+    /**
+     * The URL to which the request was made.
+     * @return string The URL to which the request was made.
+     */
+    public function getUrl(): string
+    {
+        return $this->_url;
+    }
+
+    /**
+     * @return bool Whether or not this response is served from cache.
+     */
+    public function isFromCache(): bool
+    {
+        return $this->_isFromCache;
+    }
+
+    /**
+     * @param $isFromCache bool True if this response is served from cache.
+     */
+    public function setIsFromCache(bool $isFromCache): void
+    {
+        $this->_isFromCache = $isFromCache;
+    }
 
 }
