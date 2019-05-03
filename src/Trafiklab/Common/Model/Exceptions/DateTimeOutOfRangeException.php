@@ -13,9 +13,9 @@ use Throwable;
  */
 class DateTimeOutOfRangeException extends InvalidRequestException
 {
-    public function __construct(string $parameter, string $value = "", Throwable $previous = null)
+    public function __construct(array $parameters, string $dateValue = "", Throwable $previous = null)
     {
-        parent::__construct([$parameter], "The selected date '$value' lies outside of the available timetables",
+        parent::__construct("The selected date '$dateValue' lies outside of the available timetables", $parameters,
             $previous);
     }
 }
