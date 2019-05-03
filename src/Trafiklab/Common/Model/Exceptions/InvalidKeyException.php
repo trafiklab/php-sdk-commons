@@ -2,6 +2,13 @@
 
 namespace Trafiklab\Common\Model\Exceptions;
 
+/**
+ * Class InvalidKeyException
+ *
+ * Thrown when the specified key is invalid for the used API.
+ *
+ * @package Trafiklab\Common\Model\Exceptions
+ */
 class InvalidKeyException extends InvalidRequestException
 {
     public function __construct(string $key, string $detail = "")

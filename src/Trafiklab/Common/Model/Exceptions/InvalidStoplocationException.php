@@ -13,8 +13,8 @@ use Throwable;
  */
 class InvalidStoplocationException extends InvalidRequestException
 {
-    public function __construct(string $detail = "", Throwable $previous = null)
+    public function __construct(array $parameters = [], Throwable $previous = null)
     {
-        parent::__construct("One or more ids for stop locations are invalid. $detail", $previous);
+        parent::__construct("One or more ids for stop locations are invalid.", $parameters, $previous);
     }
 }

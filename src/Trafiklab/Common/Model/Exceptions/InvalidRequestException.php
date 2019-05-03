@@ -5,6 +5,13 @@ namespace Trafiklab\Common\Model\Exceptions;
 use Exception;
 use Throwable;
 
+/**
+ * Class InvalidRequestException
+ *
+ * Thrown when a request failed because of invalid or missing parameters.
+ *
+ * @package Trafiklab\Common\Model\Exceptions
+ */
 class InvalidRequestException extends Exception
 {
     public function __construct(string $exception, array $parameters = [], Throwable $previous = null)
