@@ -14,11 +14,11 @@ interface TimeTableResponse
 {
 
     /**
-     * Get the original response from the API
+     * Get the original response from the API.
      *
      * @return WebResponseImpl
      */
-    public function getOriginalApiResponse(): WebResponseImpl;
+    public function getOriginalApiResponse(): WebResponse;
 
     /**
      * @return TimeTableEntry[] The requested timetable as an array of timetable entries.

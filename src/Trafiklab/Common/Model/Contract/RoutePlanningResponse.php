@@ -15,7 +15,7 @@ interface RoutePlanningResponse
 
 
     /**
-     * Get the original response from the API
+     * Get the original response from the API.
      *
      * @return WebResponseImpl
      */
