@@ -22,7 +22,7 @@ interface TimeTableRequest
 
     public function setTimeTableType(int $timeTableType): void;
 
-    public function getDateTime(): DateTime;
+    public function getDateTime(): ?DateTime;
 
-    public function setDateTime(DateTime $timeTableType): void;
+    public function setDateTime(?DateTime $timeTableType): void;
 }

@@ -17,17 +17,13 @@ interface RoutePlanningRequest
 
     public function setOriginStopId(string $stopId): void;
 
-    public function getViaStopId(): string;
+    public function getViaStopId(): ?string;
 
-    public function setViaStopId(string $stopId): void;
+    public function setViaStopId(?string $stopId): void;
 
     public function getDestinationStopId(): string;
 
     public function setDestinationStopId(string $stopId): void;
-
-    public function getTimeTableType(): int;
-
-    public function setTimeTableType(int $timeTableType): void;
 
     public function getRoutePlanningSearchType(): int;
 
@@ -35,6 +31,6 @@ interface RoutePlanningRequest
 
     public function getDateTime(): DateTime;
 
-    public function setDateTime(DateTime $timeTableType): void;
+    public function setDateTime(?DateTime $timeTableType): void;
 }
 
