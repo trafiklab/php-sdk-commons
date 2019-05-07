@@ -1,6 +1,7 @@
 <?php
 
 namespace Trafiklab\Common\Model\Exceptions;
+
 /**
  * Class RequestTimedOutException
  *

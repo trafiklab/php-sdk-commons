@@ -4,6 +4,10 @@ namespace Trafiklab\Common\Internal;
 
 use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
 
+/**
+ * @internal
+ * @package Trafiklab\Common\Internal
+ */
 class CurlWebClient implements WebClient
 {
     private const CACHE_TTL_SECONDS = 15;  // Cache validity in seconds
@@ -18,7 +22,16 @@ class CurlWebClient implements WebClient
         $this->_cache = CacheImpl::getInstance();
     }
 
-    function makeRequest(string $endpoint, array $parameters): WebResponse
+    /**
+     * Make a request to an HTTP server.
+     *
+     * @param string $endpoint   The URL to make the request to.
+     * @param array  $parameters An associative array of parameters to send along as Query parameters.
+     *
+     * @return WebResponseImpl Object containing information on both the request and the response.
+     * @throws RequestTimedOutException Thrown when the server does not answer within 10 seconds.
+     */
+    function makeRequest(string $endpoint, array $parameters): WebResponseImpl
     {
         // Url-encode parameters
         $urlEncodedKeyValueStrings = [];
@@ -67,7 +80,7 @@ class CurlWebClient implements WebClient
             default:
                 // Get the HTTP response code and create the response object.
                 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                $response = new WebResponse($url, $parameters, $this->_userAgent, $httpCode, $output);
+                $response = new WebResponseImpl($url, $parameters, $this->_userAgent, $httpCode, $output);
 
                 // close curl resource to free up system resources
                 curl_close($ch);

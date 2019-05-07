@@ -18,9 +18,9 @@ class CurlWebClientTest extends PHPUnit_Framework_TestCase
         $webclient = new CurlWebClient("Trafiklab/php-sdk-base Unit tests");
         $webResponse = $webclient->makeRequest("https://httpstat.us/200", ['sleep' => 5]);
         self::assertEquals(200, $webResponse->getResponseCode());
-        self::assertEquals("https://httpstat.us/200?sleep=5", $webResponse->getUrl());
+        self::assertEquals("https://httpstat.us/200?sleep=5", $webResponse->getRequestUrl());
         self::assertEquals("Trafiklab/php-sdk-base Unit tests", $webResponse->getRequestUserAgent());
-        self::assertEquals("200 OK", $webResponse->getBody());
+        self::assertEquals("200 OK", $webResponse->getResponseBody());
         self::assertArrayHasKey('sleep', $webResponse->getRequestParameters());
         self::assertEquals(5, $webResponse->getRequestParameters()['sleep']);
         self::assertEquals(5, $webResponse->getRequestParameter('sleep'));
@@ -46,6 +46,6 @@ class CurlWebClientTest extends PHPUnit_Framework_TestCase
         $webclient = new CurlWebClient("Trafiklab/php-sdk-base Unit tests");
         $webclient->makeRequest("https://httpstat.us/200", []);
         $webResponse = $webclient->makeRequest("https://httpstat.us/200", []);
-        self::assertTrue($webResponse->isFromCache());
+        self::assertTrue($webResponse->isFromLocalCache());
     }
 }

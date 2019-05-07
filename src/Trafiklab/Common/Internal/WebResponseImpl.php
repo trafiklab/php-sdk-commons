@@ -3,8 +3,13 @@
 
 namespace Trafiklab\Common\Internal;
 
+use Trafiklab\Common\Model\Contract\WebResponse;
 
-class WebResponse
+/**
+ * @internal Some functions might be exposed through the WebResponse interface
+ * @package  Trafiklab\Common\Internal
+ */
+class WebResponseImpl implements WebResponse
 {
     private $_responseCode;
     private $_body;
@@ -27,7 +32,7 @@ class WebResponse
      * The HTTP body received from the server.
      * @return mixed The HTTP response code received from the server.
      */
-    public function getBody()
+    public function getResponseBody()
     {
         return $this->_body;
     }
@@ -79,15 +84,17 @@ class WebResponse
      * The URL to which the request was made.
      * @return string The URL to which the request was made.
      */
-    public function getUrl(): string
+    public function getRequestUrl(): string
     {
         return $this->_url;
     }
 
     /**
+     * Whether or not this response is served from a local cache on the system that made the request.
+     * If this is true, the request was never sent to the server.
      * @return bool Whether or not this response is served from cache.
      */
-    public function isFromCache(): bool
+    public function isFromLocalCache(): bool
     {
         return $this->_isFromCache;
     }
@@ -95,7 +102,7 @@ class WebResponse
     /**
      * @param $isFromCache bool True if this response is served from cache.
      */
-    public function setIsFromCache(bool $isFromCache): void
+    public function setIsFromLocalCache(bool $isFromCache): void
     {
         $this->_isFromCache = $isFromCache;
     }

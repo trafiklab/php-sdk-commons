@@ -11,6 +11,7 @@ use Cache\Adapter\PHPArray\ArrayCachePool;
  * This abstraction layer allows to automatically determine the best available caching method, which allows the code to
  * work optimal on a wider variety of systems.
  *
+ * @internal
  * @package Trafiklab\Common\Internal
  */
 class CacheImpl implements Cache

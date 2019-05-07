@@ -3,7 +3,10 @@
 
 namespace Trafiklab\Common\Internal;
 
-
+/**
+ * @internal
+ * @package Trafiklab\Common\Internal
+ */
 interface Cache
 {
     function contains(string $key): bool;
