@@ -4,6 +4,7 @@
 namespace Trafiklab\Common\Internal;
 
 
+use Trafiklab\Common\Model\Contract\WebResponse;
 use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
 
 /**
@@ -19,5 +20,5 @@ interface WebClient
      * @return WebResponseImpl The response received from the web server.
      * @throws RequestTimedOutException
      */
-    function makeRequest(string $endpoint, array $parameters): WebResponseImpl;
+    function makeRequest(string $endpoint, array $parameters): WebResponse;
 }

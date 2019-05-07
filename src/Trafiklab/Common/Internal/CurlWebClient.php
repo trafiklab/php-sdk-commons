@@ -3,6 +3,7 @@
 namespace Trafiklab\Common\Internal;
 
 use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
+use Trafiklab\Common\Model\Contract\WebResponse;
 
 /**
  * @internal
@@ -28,10 +29,10 @@ class CurlWebClient implements WebClient
      * @param string $endpoint   The URL to make the request to.
      * @param array  $parameters An associative array of parameters to send along as Query parameters.
      *
-     * @return WebResponseImpl Object containing information on both the request and the response.
+     * @return WebResponse Object containing information on both the request and the response.
      * @throws RequestTimedOutException Thrown when the server does not answer within 10 seconds.
      */
-    function makeRequest(string $endpoint, array $parameters): WebResponseImpl
+    function makeRequest(string $endpoint, array $parameters): WebResponse
     {
         // Url-encode parameters
         $urlEncodedKeyValueStrings = [];
