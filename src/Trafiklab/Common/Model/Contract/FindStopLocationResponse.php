@@ -5,12 +5,13 @@ namespace Trafiklab\Common\Model\Contract;
 use Trafiklab\Common\Internal\WebResponseImpl;
 
 /**
- * Interface RoutePlanningResponse
+ * Interface FindStopLocationResponse
  *
+ * @see     FindStopLocationRequest
  * @api
  * @package Trafiklab\Common\Model\Contract
  */
-interface RoutePlanningResponse
+interface FindStopLocationResponse
 {
 
 
@@ -23,8 +24,9 @@ interface RoutePlanningResponse
 
 
     /**
+     * An array containing the stop areas which were found.
      *
-     * @return Trip[]
+     * @return FindStopLocationEntry[]
      */
-    public function getTrips(): array;
+    public function getFoundStopAreas(): array;
 }

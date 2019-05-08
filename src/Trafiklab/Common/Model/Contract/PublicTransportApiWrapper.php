@@ -38,6 +38,13 @@ interface PublicTransportApiWrapper
     public function setTimeTablesApiKey(string $apiKey): void;
 
     /**
+     * Set the API key used for finding stop locations.
+     *
+     * @param string $apiKey The API key to use.
+     */
+    public function setFindStopLocationApiKey(string $apiKey): void;
+
+    /**
      * Get a timetable for a certain stop.
      *
      * @param TimeTableRequest $timeTableRequest The request object containing the query parameters.
@@ -54,4 +61,14 @@ interface PublicTransportApiWrapper
      * @return RoutePlanningResponse The response from the API.
      */
     public function getRoutePlanning(RoutePlanningRequest $routePlanningRequest): RoutePlanningResponse;
+
+
+    /**
+     * Get a route-planning between two points.
+     *
+     * @param FindStopLocationRequest $findStopLocationRequest The request object containing the query parameters.
+     *
+     * @return FindStopLocationResponse The response from the API.
+     */
+    public function findStopLocation(FindStopLocationRequest $findStopLocationRequest): FindStopLocationResponse;
 }

@@ -2,8 +2,6 @@
 
 namespace Trafiklab\Common\Model\Contract;
 
-use Trafiklab\Common\Internal\WebResponseImpl;
-
 /**
  * A timetable response from a transportation API.
  *
@@ -16,7 +14,8 @@ interface TimeTableResponse
     /**
      * Get the original response from the API.
      *
-     * @return WebResponseImpl
+     * @return WebResponse
+     *
      */
     public function getOriginalApiResponse(): WebResponse;
 
