@@ -3,6 +3,14 @@
 namespace Trafiklab\Common\Model\Contract;
 
 
+use Trafiklab\Common\Model\Exceptions\InvalidKeyException;
+use Trafiklab\Common\Model\Exceptions\InvalidRequestException;
+use Trafiklab\Common\Model\Exceptions\InvalidStoplocationException;
+use Trafiklab\Common\Model\Exceptions\KeyRequiredException;
+use Trafiklab\Common\Model\Exceptions\QuotaExceededException;
+use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
+use Trafiklab\Common\Model\Exceptions\ServiceUnavailableException;
+
 /**
  * A PublicTransportApiWrapper wraps one or more TrafikLab APIs to use them in our SDK.
  * These contracts define a small set of common features which should be interchangeable between wrappers and APIs.
@@ -50,6 +58,13 @@ interface PublicTransportApiWrapper
      * @param TimeTableRequest $timeTableRequest The request object containing the query parameters.
      *
      * @return TimeTableResponse  The response from the API.
+     * @throws InvalidKeyException
+     * @throws InvalidRequestException
+     * @throws InvalidStoplocationException
+     * @throws KeyRequiredException
+     * @throws QuotaExceededException
+     * @throws RequestTimedOutException
+     * @throws ServiceUnavailableException
      */
     public function getTimeTable(TimeTableRequest $timeTableRequest): TimeTableResponse;
 
@@ -59,16 +74,30 @@ interface PublicTransportApiWrapper
      * @param RoutePlanningRequest $routePlanningRequest The request object containing the query parameters.
      *
      * @return RoutePlanningResponse The response from the API.
+     * @throws InvalidKeyException
+     * @throws InvalidRequestException
+     * @throws InvalidStoplocationException
+     * @throws KeyRequiredException
+     * @throws QuotaExceededException
+     * @throws RequestTimedOutException
+     * @throws ServiceUnavailableException
      */
     public function getRoutePlanning(RoutePlanningRequest $routePlanningRequest): RoutePlanningResponse;
 
 
     /**
-     * Get a route-planning between two points.
+     * Find a stop location based on (a part of) its name.
      *
-     * @param FindStopLocationRequest $findStopLocationRequest The request object containing the query parameters.
+     * @param FindStopLocationRequest $request The request object containing the query parameters.
      *
      * @return FindStopLocationResponse The response from the API.
+     * @throws InvalidKeyException
+     * @throws InvalidRequestException
+     * @throws InvalidStoplocationException
+     * @throws KeyRequiredException
+     * @throws QuotaExceededException
+     * @throws RequestTimedOutException
+     * @throws ServiceUnavailableException
      */
-    public function findStopLocation(FindStopLocationRequest $findStopLocationRequest): FindStopLocationResponse;
+    public function findStopLocation(FindStopLocationRequest $request): FindStopLocationResponse;
 }
