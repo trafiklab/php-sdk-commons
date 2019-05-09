@@ -2,8 +2,6 @@
 
 namespace Trafiklab\Common\Model\Contract;
 
-use Trafiklab\Common\Internal\WebResponseImpl;
-
 /**
  * A response from a webserver.
  *

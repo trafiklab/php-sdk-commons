@@ -2,8 +2,6 @@
 
 namespace Trafiklab\Common\Model\Contract;
 
-use Trafiklab\Common\Internal\WebResponseImpl;
-
 /**
  * Interface RoutePlanningResponse
  *

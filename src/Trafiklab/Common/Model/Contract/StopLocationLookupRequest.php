@@ -4,8 +4,8 @@
 namespace Trafiklab\Common\Model\Contract;
 
 /**
- * A StopLocationLookupRequest is a request to look up a certain stop location by (a part of) its name. This way a stop location ID
- * can obtained. These APIs are called "Platsupplag" on trafiklab.se.
+ * A StopLocationLookupRequest is a request to look up a certain stop location by (a part of) its name. This way a stop
+ * location ID can obtained. These APIs are called "Platsupplag" on trafiklab.se.
  *
  * @see     StopLocationLookupResponse
  * @api

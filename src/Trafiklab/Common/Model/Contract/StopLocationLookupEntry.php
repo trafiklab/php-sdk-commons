@@ -8,7 +8,7 @@ use Trafiklab\Common\Model\Enum\TransportType;
  * A stop location found by a StopLocationLookupRequest.
  *
  * @see     StopLocationLookupRequest
- * @see StopLocationLookupResponse
+ * @see     StopLocationLookupResponse
  *
  * @api
  * @package Trafiklab\Common\Model\Contract
