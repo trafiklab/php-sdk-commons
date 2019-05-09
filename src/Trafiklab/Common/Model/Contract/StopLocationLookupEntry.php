@@ -54,12 +54,12 @@ interface StopLocationLookupEntry
     /**
      * Check if a certain mode of transport stops at this stop location.
      *
-     * @param int $transportType The type of transport, one of the constants in TransportType
+     * @param string $transportType The type of transport, one of the constants in TransportType
      *
      * @return bool Whether or not the specified type of traffic can stop in this point. In case an API doesn't provide
      *              this information, it will always return true.
      *
      * @see TransportType
      */
-    public function isStopLocationForTransportType(int $transportType): bool;
+    public function isStopLocationForTransportType(string $transportType): bool;
 }
