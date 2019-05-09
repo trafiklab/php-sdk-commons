@@ -5,7 +5,7 @@ namespace Trafiklab\Common\Model\Contract;
 
 use Trafiklab\Common\Model\Exceptions\InvalidKeyException;
 use Trafiklab\Common\Model\Exceptions\InvalidRequestException;
-use Trafiklab\Common\Model\Exceptions\InvalidStoplocationException;
+use Trafiklab\Common\Model\Exceptions\InvalidStopLocationException;
 use Trafiklab\Common\Model\Exceptions\KeyRequiredException;
 use Trafiklab\Common\Model\Exceptions\QuotaExceededException;
 use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
@@ -60,7 +60,7 @@ interface PublicTransportApiWrapper
      * @return TimeTableResponse  The response from the API.
      * @throws InvalidKeyException
      * @throws InvalidRequestException
-     * @throws InvalidStoplocationException
+     * @throws InvalidStopLocationException
      * @throws KeyRequiredException
      * @throws QuotaExceededException
      * @throws RequestTimedOutException
@@ -76,7 +76,7 @@ interface PublicTransportApiWrapper
      * @return RoutePlanningResponse The response from the API.
      * @throws InvalidKeyException
      * @throws InvalidRequestException
-     * @throws InvalidStoplocationException
+     * @throws InvalidStopLocationException
      * @throws KeyRequiredException
      * @throws QuotaExceededException
      * @throws RequestTimedOutException
@@ -93,7 +93,7 @@ interface PublicTransportApiWrapper
      * @return FindStopLocationResponse The response from the API.
      * @throws InvalidKeyException
      * @throws InvalidRequestException
-     * @throws InvalidStoplocationException
+     * @throws InvalidStopLocationException
      * @throws KeyRequiredException
      * @throws QuotaExceededException
      * @throws RequestTimedOutException

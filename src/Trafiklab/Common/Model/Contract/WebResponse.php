@@ -2,6 +2,8 @@
 
 namespace Trafiklab\Common\Model\Contract;
 
+use Trafiklab\Common\Internal\WebResponseImpl;
+
 /**
  * A response from a webserver.
  *
@@ -45,4 +47,13 @@ interface WebResponse
      * @return bool Whether or not this response is served from cache.
      */
     public function isFromLocalCache(): bool;
+
+    /**
+     * Retrieve one of the request parameters which were used to make this request.
+     *
+     * @param string $name The parameter to retrieve.
+     *
+     * @return mixed One of the request parameters which were used to make this request.
+     */
+    public function getRequestParameter(string $name);
 }
