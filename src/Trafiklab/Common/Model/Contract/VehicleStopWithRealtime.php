@@ -15,7 +15,7 @@ interface VehicleStopWithRealtime extends VehicleStop
 {
     /**
      * @return DateTime|null   The estimated (real-time) departure time at this stop. Null if there is no data about
-     *                         the departure time at this stop area.
+     *                         the departure time at this stop location.
      */
     public function getEstimatedDepartureTime(): ?DateTime;
 
@@ -23,7 +23,7 @@ interface VehicleStopWithRealtime extends VehicleStop
      * The arrival time at this stop.
      *
      * @return DateTime|null The estimated (real-time) arrival time at this stop. Null if there is no data about the
-     *                       arrival time at this stop area.
+     *                       arrival time at this stop location.
      */
     public function getEstimatedArrivalTime(): ?DateTime;
 

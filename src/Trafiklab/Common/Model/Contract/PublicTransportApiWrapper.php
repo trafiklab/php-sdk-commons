@@ -46,11 +46,11 @@ interface PublicTransportApiWrapper
     public function setTimeTablesApiKey(string $apiKey): void;
 
     /**
-     * Set the API key used for finding stop locations.
+     * Set the API key used for looking up stop locations.
      *
      * @param string $apiKey The API key to use.
      */
-    public function setFindStopLocationApiKey(string $apiKey): void;
+    public function setStopLocationLookupApiKey(string $apiKey): void;
 
     /**
      * Get a timetable for a certain stop.
@@ -86,11 +86,11 @@ interface PublicTransportApiWrapper
 
 
     /**
-     * Find a stop location based on (a part of) its name.
+     * Look up a stop location based on (a part of) its name.
      *
-     * @param FindStopLocationRequest $request The request object containing the query parameters.
+     * @param StopLocationLookupRequest $request The request object containing the query parameters.
      *
-     * @return FindStopLocationResponse The response from the API.
+     * @return StopLocationLookupResponse The response from the API.
      * @throws InvalidKeyException
      * @throws InvalidRequestException
      * @throws InvalidStopLocationException
@@ -99,5 +99,5 @@ interface PublicTransportApiWrapper
      * @throws RequestTimedOutException
      * @throws ServiceUnavailableException
      */
-    public function findStopLocation(FindStopLocationRequest $request): FindStopLocationResponse;
+    public function lookupStopLocation(StopLocationLookupRequest $request): StopLocationLookupResponse;
 }

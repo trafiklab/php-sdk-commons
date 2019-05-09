@@ -5,41 +5,41 @@ namespace Trafiklab\Common\Model\Contract;
 use Trafiklab\Common\Model\Enum\TransportType;
 
 /**
- * A stop location found by a FindStopLocationRequest.
+ * A stop location found by a StopLocationLookupRequest.
  *
- * @see FindStopLocationRequest
- * @see FindStopLocationResponse
+ * @see     StopLocationLookupRequest
+ * @see StopLocationLookupResponse
  *
  * @api
  * @package Trafiklab\Common\Model\Contract
  */
-interface FindStopLocationEntry
+interface StopLocationLookupEntry
 {
     /**
-     * Get the id of this stop area.
+     * Get the id of this stop location.
      *
-     * @return string The id of this stop area.
+     * @return string The id of this stop location.
      */
     public function getId(): string;
 
     /**
-     * Get the name of this stop area.
+     * Get the name of this stop location.
      *
-     * @return string The name of this stop area.
+     * @return string The name of this stop location.
      */
     public function getName(): string;
 
     /**
-     * The longitude of this stop area.
+     * The longitude of this stop location.
      *
-     * @return float The longitude of this stop area.
+     * @return float The longitude of this stop location.
      */
     public function getLongitude(): float;
 
     /**
-     * The latitude of this stop area.
+     * The latitude of this stop location.
      *
-     * @return float The latitude of this stop area.
+     * @return float The latitude of this stop location.
      */
     public function getLatitude(): float;
 
@@ -61,5 +61,5 @@ interface FindStopLocationEntry
      *
      * @see TransportType
      */
-    public function isStopAreaForTransportType(int $transportType): bool;
+    public function isStopLocationForTransportType(int $transportType): bool;
 }

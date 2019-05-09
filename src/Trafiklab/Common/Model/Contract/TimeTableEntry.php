@@ -22,7 +22,7 @@ interface TimeTableEntry
     public function getDirection(): string;
 
     /**
-     * The time at which the vehicle will arrive at the stop area. This can be an interval (5 min) or a time
+     * The time at which the vehicle will arrive at the stop location. This can be an interval (5 min) or a time
      * (18:00) depending on the operator and data source.
      *
      * @return string
@@ -58,7 +58,7 @@ interface TimeTableEntry
     public function getScheduledStopTime(): DateTime;
 
     /**
-     * The Id for the stop area.
+     * The Id for the stop location.
      *
      * @return string
      */

@@ -4,14 +4,14 @@
 namespace Trafiklab\Common\Model\Contract;
 
 /**
- * A FindStopLocationRequest is a request to find a certain stop area by (a part of) its name. This way a stop area ID
+ * A StopLocationLookupRequest is a request to look up a certain stop location by (a part of) its name. This way a stop location ID
  * can obtained. These APIs are called "Platsupplag" on trafiklab.se.
  *
- * @see     FindStopLocationResponse
+ * @see     StopLocationLookupResponse
  * @api
  * @package Trafiklab\Common\Model\Contract
  */
-interface FindStopLocationRequest
+interface StopLocationLookupRequest
 {
     /**
      * Set the station name to search after. The maximum length might be limited based on the implementation.

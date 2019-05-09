@@ -13,22 +13,22 @@ use DateTime;
 interface VehicleStop
 {
     /**
-     * The id for this stop area.
+     * The id for this stop location.
      *
      * @return string
      */
     public function getStopId(): string;
 
     /**
-     * The name of this stop area.
+     * The name of this stop location.
      *
-     * @return string The name of this stop area.
+     * @return string The name of this stop location.
      */
     public function getStopName(): string;
 
     /**
      * @return DateTime|null   The departure time at this stop. Null if there is no data about the departure time at
-     *                         this stop area.
+     *                         this stop location.
      */
     public function getScheduledDepartureTime(): ?DateTime;
 
@@ -36,7 +36,7 @@ interface VehicleStop
      * The arrival time at this stop.
      *
      * @return DateTime|null The arrival time at this stop. Null if there is no data about the arrival time at this
-     *                       stop area.
+     *                       stop location.
      */
     public function getScheduledArrivalTime(): ?DateTime;
 
@@ -48,14 +48,14 @@ interface VehicleStop
     public function getPlatform(): ?string;
 
     /**
-     * The latitude component of this stop area's coordinates.
+     * The latitude component of this stop location's coordinates.
      *
      * @return float
      */
     public function getLatitude(): float;
 
     /**
-     * The longitude component of this stop area's coordinates.
+     * The longitude component of this stop location's coordinates.
      *
      * @return float
      */
