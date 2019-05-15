@@ -22,6 +22,14 @@ interface Vehicle
      */
     public function getNumber(): int;
 
+
+    /**
+     * The line number of the vehicle, identifying the line on which it runs. Example: 41X.
+     *
+     * @return string
+     */
+    public function getLineNumber(): string;
+
     /**
      * The type of vehicle. Example: "Snabbtåg".
      *

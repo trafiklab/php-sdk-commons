@@ -100,4 +100,10 @@ interface PublicTransportApiWrapper
      * @throws ServiceUnavailableException
      */
     public function lookupStopLocation(StopLocationLookupRequest $request): StopLocationLookupResponse;
+
+    public function createTimeTableRequestObject(): TimeTableRequest;
+
+    public function createRoutePlanningRequestObject(): RoutePlanningRequest;
+
+    public function createStopLocationLookupRequestObject(): StopLocationLookupRequest;
 }
