@@ -20,7 +20,7 @@ interface Vehicle
      *
      * @return int
      */
-    public function getNumber(): int;
+    public function getNumber(): ?int;
 
 
     /**
@@ -28,7 +28,7 @@ interface Vehicle
      *
      * @return string
      */
-    public function getLineNumber(): string;
+    public function getLineNumber(): ?string;
 
     /**
      * The type of vehicle. Example: "Snabbtåg".

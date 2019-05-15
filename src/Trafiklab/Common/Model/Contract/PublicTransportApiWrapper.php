@@ -27,7 +27,7 @@ interface PublicTransportApiWrapper
      *
      * @param string $userAgent The user agent to send along with every request.
      */
-    public function setUserAgent(string $userAgent): void;
+    public function setUserAgent(?string $userAgent): void;
 
 
     /**
@@ -35,7 +35,7 @@ interface PublicTransportApiWrapper
      *
      * @param string $apiKey The API key to use.
      */
-    public function setRoutePlanningApiKey(string $apiKey): void;
+    public function setRoutePlanningApiKey(?string $apiKey): void;
 
 
     /**
@@ -43,14 +43,14 @@ interface PublicTransportApiWrapper
      *
      * @param string $apiKey The API key to use.
      */
-    public function setTimeTablesApiKey(string $apiKey): void;
+    public function setTimeTablesApiKey(?string $apiKey): void;
 
     /**
      * Set the API key used for looking up stop locations.
      *
      * @param string $apiKey The API key to use.
      */
-    public function setStopLocationLookupApiKey(string $apiKey): void;
+    public function setStopLocationLookupApiKey(?string $apiKey): void;
 
     /**
      * Get a timetable for a certain stop.
