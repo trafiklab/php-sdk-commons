@@ -101,9 +101,26 @@ interface PublicTransportApiWrapper
      */
     public function lookupStopLocation(StopLocationLookupRequest $request): StopLocationLookupResponse;
 
+    /**
+     * Create a new instance of a TimeTableRequest object, which can be used to make timetable requests later on.
+     *
+     * @return TimeTableRequest The newly created request object.
+     */
     public function createTimeTableRequestObject(): TimeTableRequest;
 
+    /**
+     * Create a new instance of a RoutePlanningRequest object, which can be used to make routeplanning requests later
+     * on.
+     *
+     * @return RoutePlanningRequest The newly created request object.
+     */
     public function createRoutePlanningRequestObject(): RoutePlanningRequest;
 
+    /**
+     * Create a new instance of a StopLocationLookupRequest object, which can be used to make stop location lookup
+     * requests later on.
+     *
+     * @return StopLocationLookupRequest The newly created request object.
+     */
     public function createStopLocationLookupRequestObject(): StopLocationLookupRequest;
 }
