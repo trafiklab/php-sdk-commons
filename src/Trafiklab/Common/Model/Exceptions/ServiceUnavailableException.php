@@ -2,7 +2,6 @@
 
 namespace Trafiklab\Common\Model\Exceptions;
 
-use Exception;
 use Throwable;
 
 /**
@@ -13,7 +12,7 @@ use Throwable;
  *
  * @package Trafiklab\Common\Model\Exceptions
  */
-class ServiceUnavailableException extends Exception
+class ServiceUnavailableException extends TrafiklabSdkException
 {
     public function __construct(string $url,
                                 string $message = "The service is currently unavailable",

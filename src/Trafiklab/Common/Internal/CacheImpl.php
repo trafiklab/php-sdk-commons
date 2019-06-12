@@ -40,11 +40,11 @@ class CacheImpl implements Cache
     }
 
     /**
-     * Check if an item is present in the cache.
+     * Check if the cache contains a certain key.
      *
-     * @param string $key The key to search for.
+     * @param string $key The key to check.
      *
-     * @return bool Whether or not the key is present in the cache.
+     * @return bool True if the key is present in the cache.
      */
     public function contains(string $key): bool
     {
@@ -53,12 +53,13 @@ class CacheImpl implements Cache
         return $this->cache->hasItem($key);
     }
 
+
     /**
-     * Get an item from the cache.
+     * Retrieve an object from cache.
      *
-     * @param string $key The key to search for.
+     * @param string $key The key for which data should be retrieved.
      *
-     * @return bool|mixed The cached object if found. If not found, false.
+     * @return bool|mixed The cached object. False if not found.
      */
     public function get(string $key)
     {
@@ -71,14 +72,15 @@ class CacheImpl implements Cache
         }
     }
 
+
     /**
-     * Store an item in the cache.
+     * Store data in the cache.
      *
-     * @param string              $key   The key to store the object under.
-     * @param object|array|string $value The object to store.
-     * @param int                 $ttl   The number of seconds to keep this in cache.
+     * @param string $key   The key to store.
+     * @param mixed  $value The data to store.
+     * @param int    $ttl   How long the data can live in the cache, in seconds.
      */
-    public function put(string $key, $value, $ttl = self::DEFAULT_CACHE_TTL): void
+    public function put(string $key, $value, int $ttl = self::DEFAULT_CACHE_TTL): void
     {
         $key = $this->getPrefixedAndHashedKey($key);
         $this->createCachePool();
@@ -92,6 +94,8 @@ class CacheImpl implements Cache
     }
 
     /**
+     * Create a new cache pool
+     *
      * @return \Cache\Adapter\Common\AbstractCachePool the cachePool for this application
      */
     private function createCachePool()
@@ -108,7 +112,14 @@ class CacheImpl implements Cache
         return $this->cache;
     }
 
-    private function getPrefixedAndHashedKey($key): string
+    /**
+     * Get a hashed key, prefixed by the constant prefix defined in this class.
+     *
+     * @param string $key The key to hash and prefix
+     *
+     * @return string The hashed and prefixed key.
+     */
+    private function getPrefixedAndHashedKey(string $key): string
     {
         return self::PREFIX . md5($key);
     }

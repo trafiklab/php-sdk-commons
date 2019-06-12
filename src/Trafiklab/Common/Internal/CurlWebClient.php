@@ -49,7 +49,7 @@ class CurlWebClient implements WebClient
         // Check if the url is cached.
         if ($this->_cache->contains($url)) {
             $webResponse = $this->_cache->get($url);
-            $webResponse->setIsFromCache(true);
+            $webResponse->setIsFromLocalCache(true);
             return $webResponse;
         }
 
@@ -77,6 +77,8 @@ class CurlWebClient implements WebClient
                 break;
 
             // More exception/error cases should be handled here.
+
+            // In case there were no errors:
             case 0:
             default:
                 // Get the HTTP response code and create the response object.

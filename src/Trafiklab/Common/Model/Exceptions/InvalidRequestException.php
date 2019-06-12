@@ -2,7 +2,6 @@
 
 namespace Trafiklab\Common\Model\Exceptions;
 
-use Exception;
 use Throwable;
 
 /**
@@ -12,7 +11,7 @@ use Throwable;
  *
  * @package Trafiklab\Common\Model\Exceptions
  */
-class InvalidRequestException extends Exception
+class InvalidRequestException extends TrafiklabSdkException
 {
     public function __construct(string $exception, array $parameters = [], Throwable $previous = null)
     {
