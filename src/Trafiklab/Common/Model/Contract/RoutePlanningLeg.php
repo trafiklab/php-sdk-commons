@@ -17,16 +17,23 @@ interface RoutePlanningLeg
     /**
      * The origin of this leg.
      *
-     * @return VehicleStop The first vehicle stop, with at which this leg starts.
+     * @return VehicleStop The first vehicle stop, with which this leg starts.
      */
-    public function getOrigin(): VehicleStop;
+    public function getDeparture(): VehicleStop;
 
     /**
      * The destination of this leg.
      *
      * @return VehicleStop The last vehicle stop, with which this leg ends.
      */
-    public function getDestination(): VehicleStop;
+    public function getArrival(): VehicleStop;
+
+    /**
+     * Get the duration of this leg in seconds.
+     * @return int
+     */
+    public function getDuration(): int;
+
 
     /**
      * Remarks about this leg, for example describing facilities on board of a train, or possible disturbances on the

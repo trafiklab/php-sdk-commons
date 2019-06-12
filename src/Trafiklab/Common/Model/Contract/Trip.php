@@ -20,4 +20,26 @@ interface Trip
      * @return RoutePlanningLeg[] An array containing the legs in this Trip.
      */
     public function getLegs(): array;
+
+    /**
+     * Get the duration of this trip in seconds.
+     *
+     * @return int
+     */
+    public function getDuration(): int;
+
+    /**
+     * Get the departure for the first leg.
+     *
+     * @return VehicleStop
+     */
+    public function getDeparture(): VehicleStop;
+
+    /**
+     * Get the arrival for the last leg.
+     *
+     * @return VehicleStop
+     */
+    public function getArrival(): VehicleStop;
+
 }
