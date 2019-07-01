@@ -76,6 +76,14 @@ interface TimeTableEntry
      */
     public function getStopName(): string;
 
+
+    /**
+     * The track or platform where the vehicle will halt.
+     *
+     * @return String
+     */
+    public function getPlatform(): ?string;
+
     /**
      * The type of timetable in which this entry resides, either arrivals or departures.
      *
@@ -96,4 +104,19 @@ interface TimeTableEntry
      * @return string TransportType indicating the type of transport.
      */
     public function getTransportType(): string;
+
+
+    /**
+     * The estimated time at which the vehicle will arrive at the stop location.
+     *
+     * @return DateTime
+     */
+    public function getEstimatedStopTime(): ?DateTime;
+
+    /**
+     * Whether or not this vehicle's stop is cancelled.
+     *
+     * @return bool
+     */
+    public function isCancelled(): bool;
 }
