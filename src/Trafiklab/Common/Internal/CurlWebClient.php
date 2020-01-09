@@ -7,8 +7,8 @@
 
 namespace Trafiklab\Common\Internal;
 
-use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
 use Trafiklab\Common\Model\Contract\WebResponse;
+use Trafiklab\Common\Model\Exceptions\RequestTimedOutException;
 
 /**
  * @internal
@@ -22,7 +22,7 @@ class CurlWebClient implements WebClient
     private $_userAgent;
     private $_cache;
 
-    public function __construct($userAgent)
+    public function __construct($userAgent = '')
     {
         $this->_userAgent = $userAgent;
         $this->_cache = CacheImpl::getInstance();
@@ -97,5 +97,15 @@ class CurlWebClient implements WebClient
                 $this->_cache->put($url, $response, self::CACHE_TTL_SECONDS);
                 return $response;
         }
+    }
+
+    /**
+     * Set the user agent string to use when making web requests.
+     *
+     * @param string $userAgent The user agent to use.
+     */
+    function setUserAgent(string $userAgent): void
+    {
+        $this->_userAgent = $userAgent;
     }
 }

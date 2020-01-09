@@ -25,4 +25,11 @@ interface WebClient
      * @throws RequestTimedOutException
      */
     function makeRequest(string $endpoint, array $parameters): WebResponse;
+
+    /**
+     * Set the user agent string to use when making web requests.
+     *
+     * @param string $userAgent The user agent to use.
+     */
+    function setUserAgent(string $userAgent): void;
 }
