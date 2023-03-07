@@ -47,4 +47,8 @@ interface TimeTableRequest
     public function getDateTime(): DateTime;
 
     public function setDateTime(?DateTime $timeTableType): void;
+
+    public function getLanguage(): string;
+
+    public function setLanguage(string $lang): void;
 }
